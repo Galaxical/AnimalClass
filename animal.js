@@ -25,7 +25,7 @@ class Animal{
     //encapsulate features like bloodType and backbone features to be accessible by some specific
 
      #withBackBone(){
-         console.log('Are Vertebrates')
+         console.log('they are Vertebrates')
      }
 
      vertebrates(){
@@ -33,7 +33,7 @@ class Animal{
      }
 
      #withoutBackBone(){
-         console.log('Are Invertebrates')
+         console.log('they are Invertebrates')
    }
     
     invertebrates(){
@@ -57,7 +57,7 @@ class Animal{
          }
 }
 
-class arthropods extends Animal{
+class arthropods extends Animal{ //class arthropod with animal extension, and peculiar method
 
     constructor(){
          super()
@@ -72,7 +72,26 @@ class arthropods extends Animal{
 }
 
 
-class amphibians extends Animal{
+class fish extends Animal{ //class amphibians with animal inheritance and peculiar characteristics
+
+    constructor(){
+         super()
+        this.habitat()
+        this.motion()
+        this.vertebrates()
+        this.coldBlood()
+    }
+
+    habitat(){
+        console.log('Fishes ives in water')
+    }
+
+    motion(){
+        console.log('Fishes swims in water')
+    }
+}
+
+class amphibians extends Animal{ //class amphibians with animal inheritance and peculiar characteristics
 
     constructor(){
          super()
@@ -86,6 +105,25 @@ class amphibians extends Animal{
     }
 }
 
+class reptiles extends Animal{ //class amphibians with animal inheritance and peculiar characteristics
+
+    constructor(){
+         super()
+        this.habitat()
+        this.motion()
+        this.vertebrates()
+        this.coldBlood()
+    }
+
+    habitat(){
+        console.log('Reptiles can live both on land and water')
+    }
+
+    motion(){
+        console.log('Some can swim while some can walk on land')
+    }
+}
 const butterfly = new arthropods() 
 const frog = new amphibians()
-
+const Fish = new fish()
+const tortoise = new reptiles()
