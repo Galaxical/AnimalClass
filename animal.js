@@ -21,55 +21,71 @@ class Animal{
     makeSound(){
         console.log('Yes, animals makes sounds!')
     }
+
+    //encapsulate features like bloodType and backbone features to be accessible by some specific
+
+     #withBackBone(){
+         console.log('Are Vertebrates')
+     }
+
+     vertebrates(){
+         this.#withBackBone()
+     }
+
+     #withoutBackBone(){
+         console.log('Are Invertebrates')
+   }
+    
+    invertebrates(){
+             this.#withoutBackBone()
+
+        }
+
+    #coldBlooded(){
+             console.log('They are coldBlooded (regulate temperature externally)')
+         }
+         coldBlood(){
+             this.#coldBlooded()
+         }
+
+         #warmBlooded(){
+             console.log('They are warmblooded (regulate temperature internally)')
+         }
+
+         warmBlood(){
+             this.#warmBlooded()
+         }
 }
 
-//const animal = new Animal()
+class arthropods extends Animal{
 
-class invertebrates extends Animal{ // subclass invertebrate to perform abstracted animal methods
-    noBackbone(){
-        console.log('invertebrates have no backbone')
+    constructor(){
+         super()
+        this.bodySections()
+        this.invertebrates()
+        this.coldBlood()
     }
-}
-
-//const noBackbone = new invertebrates()
-
-class vertebrates extends Animal{ // subclass vertebrates to perform abstracted animal methods
-    withBackBone(){
-        console.log('vertebrates have backbone')
-    }
-}
-
-//const yesBackBone = new vertebrates()
-
-class warmBlooded extends Animal{ // subclass warmblooded performs abstracted animals
-    regulateTemperature(){
-        console.log('regulates temperature from internal sources')
-    }
-}
-
-//const internalRegulator = new warmBlooded()
-
-class coldBlooded extends Animal{ //subclass coldblooded performs abstracted animal methods
-    regulateTemperature(){
-        console.log('regulates temperature from external sources')
-    }
-}
-
-//const externalRegulator = new coldBlooded()
-
-class arthropods extends (Animal, invertebrates, coldBlooded){
-    segmentedBody = true;
-    externalHeatRegulator  = true;
-    backbone = true;
 
     bodySections(){
         console.log('Arthropods has segmented bodies')
     }
-
 }
 
-const butterfly = new arthropods("inchon")
-// butterfly.regulateTemperature()
-// butterfly.bodySections()
 
-console.log(butterfly)
+class amphibians extends Animal{
+
+    constructor(){
+         super()
+        this.habitat()
+        this.invertebrates()
+        this.coldBlood()
+    }
+
+    habitat(){
+        console.log('Amphibians walk on land and live in water')
+    }
+}
+
+const butterfly = new arthropods() 
+const frog = new amphibians()
+
