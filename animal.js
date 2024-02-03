@@ -31,7 +31,7 @@ class invertebrates extends Animal{ // subclass invertebrate to perform abstract
     }
 }
 
-const noBackbone = new invertebrates()
+//const noBackbone = new invertebrates()
 
 class vertebrates extends Animal{ // subclass vertebrates to perform abstracted animal methods
     withBackBone(){
@@ -39,7 +39,7 @@ class vertebrates extends Animal{ // subclass vertebrates to perform abstracted 
     }
 }
 
-const yesBackBone = new vertebrates()
+//const yesBackBone = new vertebrates()
 
 class warmBlooded extends Animal{ // subclass warmblooded performs abstracted animals
     regulateTemperature(){
@@ -47,7 +47,7 @@ class warmBlooded extends Animal{ // subclass warmblooded performs abstracted an
     }
 }
 
-const internalRegulator = new warmBlooded()
+//const internalRegulator = new warmBlooded()
 
 class coldBlooded extends Animal{ //subclass coldblooded performs abstracted animal methods
     regulateTemperature(){
@@ -55,4 +55,21 @@ class coldBlooded extends Animal{ //subclass coldblooded performs abstracted ani
     }
 }
 
-const externalRegulator = new coldBlooded()
+//const externalRegulator = new coldBlooded()
+
+class arthropods extends (Animal, invertebrates, coldBlooded){
+    segmentedBody = true;
+    externalHeatRegulator  = true;
+    backbone = true;
+
+    bodySections(){
+        console.log('Arthropods has segmented bodies')
+    }
+
+}
+
+const butterfly = new arthropods("inchon")
+// butterfly.regulateTemperature()
+// butterfly.bodySections()
+
+console.log(butterfly)
