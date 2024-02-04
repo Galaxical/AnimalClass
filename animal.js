@@ -25,7 +25,7 @@ class Animal{
 }
 
 
-class arthropods extends Animal{ //arthropods inherits from the base class while applying polymorphism in movement
+class Arthropods extends Animal{ //arthropods inherits from the base class while applying polymorphism in movement
 
     /*in this commit, I am changing using the constructor method after 
     modifying the animal class properties using abstraction and polymorphism
@@ -78,7 +78,7 @@ class Fish extends Animal{ //fish inherits from the base class while applying po
     }
 } 
 
-class Amphibian extends Animal{ //fish inherits from the base class while applying polymorphism in movement
+class Amphibian extends Animal{ //amphibians inherits from the base class while applying polymorphism in movement
 
     _animClass = 'I am from class Amphibian'
     _bodyTemp = 'we are cold blooded animals'
@@ -135,7 +135,7 @@ class Aves extends Animal{ //Aves inherits from the base class while applying po
     wings = 'we use it to direct our movement'
     beak = 'we use the beak to pick food grains'
 
-    //applying polymorphism to depict unique movement of arthropods
+    //applying polymorphism to depict unique movement of aves
     constructor(locomotion, skin){
         super()
         this.locomotion = 'we move by swimming'
@@ -153,8 +153,8 @@ class Aves extends Animal{ //Aves inherits from the base class while applying po
     }
 } 
 
-class Mammals extends Animal{//abstracting animal base class for inheritance by Mammals
-    _animClass = 'Mammals'
+class Mammals extends Animal{//Mammals inherits from the base class while applying polymorphism in movement and skin 
+    _animClass = 'I am from class Mammals'
     _backBone = 'we have backbone'
     _bodyTemp = 'we are warm blooded animals'
     childCare = 'we have breasts for to feed our children'
@@ -179,7 +179,7 @@ class Mammals extends Animal{//abstracting animal base class for inheritance by 
 
 
 
-const butterfly = new arthropods() 
+const butterfly = new Arthropods() 
 const tuna = new Fish()
 const frog = new Amphibian()
 const tortoise = new Reptiles()
@@ -191,7 +191,3 @@ console.log(frog)
 console.log(tortoise)
 console.log(raven)
 console.log(man)
-// const frog = new amphibians()
-// const Fish = new fish()
-// const tortoise = new reptiles()
-// const birds = new Aves()
