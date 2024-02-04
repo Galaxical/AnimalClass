@@ -1,129 +1,134 @@
 class Animal{
-    constructor(){ //an abstract class   
+    constructor(){ //Abstracting base class for inheritance   
         if(this.constructor === Animal){
             throw new Error ('Animal cannot be called')
         }
     }
 
-    //general methods for abstract class animal
-    eat(){
-        console.log("Animals can eat")
+    //Encapsulating properties accessible by subclasses
+    _animClass = 'animClass';
+    _bodyTemp = 'bodyTemp';
+    _backBone = 'backBone';
+
+    //abstracting animal class properties for polymorphism
+    movement(){
+        throw new Error ('this cannot be implemented')
     }
 
-    move(){
-        console.log("Animals can move")
-    }
+//In the last commit, No need for the body temp and backbone encapsulation: I deleted them
+//Since these are already encapsulated and inherited in the abstracted animal class
 
-    die(){
-        console.log("Animals can die")
-    }
-
-    makeSound(){
-        console.log('Yes, animals makes sounds!')
-    }
-
-    //encapsulate features like bloodType and backbone features to be accessible by some specific
-
-     #withBackBone(){
-         console.log('they are Vertebrates')
-     }
-
-     vertebrates(){
-         this.#withBackBone()
-     }
-
-     #withoutBackBone(){
-         console.log('they are Invertebrates')
-   }
     
-    invertebrates(){
-             this.#withoutBackBone()
-
-        }
-
-    #coldBlooded(){
-             console.log('They are coldBlooded (regulate temperature externally)')
-         }
-         coldBlood(){
-             this.#coldBlooded()
-         }
-
-         #warmBlooded(){
-             console.log('They are warmblooded (regulate temperature internally)')
-         }
-
-         warmBlood(){
-             this.#warmBlooded()
-         }
 }
 
-class arthropods extends Animal{ //class arthropod with animal extension, and peculiar method
+class arthropods extends Animal{ //arthropods inherits from the base class while applying polymorphism in movement
 
-    constructor(){
-         super()
-        this.bodySections()
-        this.invertebrates()
-        this.coldBlood()
+    /*in this commit, I am changing using the constructor method after 
+    modifying the animal class properties using abstraction and polymorphism
+    */
+
+    _animClass = 'I am class Arthropods'
+    _bodyTemp = 'I am Cold blooded'
+    _backBone = 'I do not have any backbone'
+
+    //applying polymorphism to depict unique movement of arthropods
+    constructor(locomotion){
+        super()
+        this.locomotion = 'We may move by flying, crawling, or web!'
     }
 
-    bodySections(){
-        console.log('Arthropods has segmented bodies')
+    movement(){
+        const movement = this.locomotion
+        return movement
     }
 }
 
 
-class fish extends Animal{ //class amphibians with animal inheritance and peculiar characteristics
+// class fish extends Animal{ //class amphibians with animal inheritance and peculiar characteristics
 
-    constructor(){
-         super()
-        this.habitat()
-        this.motion()
-        this.vertebrates()
-        this.coldBlood()
-    }
+//     constructor(){
+//          super()
+//         this.habitat()
+//         this.motion()
+//         this.vertebrates()
+//         this.coldBlood()
+//     }
 
-    habitat(){
-        console.log('Fishes ives in water')
-    }
+//     habitat(){
+//         console.log('Fishes ives in water')
+//     }
 
-    motion(){
-        console.log('Fishes swims in water')
-    }
-}
+//     motion(){
+//         console.log('Fishes swims in water')
+//     }
+// }
 
-class amphibians extends Animal{ //class amphibians with animal inheritance and peculiar characteristics
+// class amphibians extends Animal{ //class amphibians with animal inheritance and peculiar characteristics
 
-    constructor(){
-         super()
-        this.habitat()
-        this.invertebrates()
-        this.coldBlood()
-    }
+//     constructor(){
+//          super()
+//         this.habitat()
+//         this.invertebrates()
+//         this.coldBlood()
+//     }
 
-    habitat(){
-        console.log('Amphibians walk on land and live in water')
-    }
-}
+//     habitat(){
+//         console.log('Amphibians walk on land and live in water')
+//     }
+// }
 
-class reptiles extends Animal{ //class amphibians with animal inheritance and peculiar characteristics
+// class reptiles extends Animal{ //class amphibians with animal inheritance and peculiar characteristics
 
-    constructor(){
-         super()
-        this.habitat()
-        this.motion()
-        this.vertebrates()
-        this.coldBlood()
-    }
+//     constructor(){
+//          super()
+//         this.habitat()
+//         this.motion()
+//         this.vertebrates()
+//         this.coldBlood()
+//     }
 
-    habitat(){
-        console.log('Reptiles can live both on land and water')
-    }
+//     habitat(){
+//         console.log('Reptiles can live both on land and water')
+//     }
 
-    motion(){
-        console.log('Some can swim while some can walk on land')
-    }
-}
+//     motion(){
+//         console.log('they move by crawling or while swimming')
+//     }
+// }
+
+// class Aves extends Animal{ //class amphibians with animal inheritance and peculiar characteristics
+
+//     constructor(habitat, motion, beak, feather){
+//          super()
+//         this.habitat()
+//         this.motion()
+//         this.vertebrates()
+//         this.warmBlood()
+//         this.beak()
+//         this.feather()
+//     }
+
+//     habitat(){
+//         console.log('Aves are aboral; they live on trees')
+//     }
+
+//     motion(){
+//         console.log('aves move by flying')
+//     }
+
+//     feather(){
+//         console.log('unique features as wings used for flying')
+//     }
+    
+//     beak(){
+//         console.log('mouth structure for picking food grains')
+//     }
+    
+// }
 const butterfly = new arthropods() 
-const frog = new amphibians()
-const Fish = new fish()
-const tortoise = new reptiles()
+console.log(butterfly)
+
+// const frog = new amphibians()
+// const Fish = new fish()
+// const tortoise = new reptiles()
+// const birds = new Aves()
