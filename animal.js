@@ -15,11 +15,15 @@ class Animal{
         throw new Error ('this cannot be implemented')
     }
 
+    skinCovering(){
+        throw new Error ('this cannot be implemented')
+    }
+
 //In the last commit, No need for the body temp and backbone encapsulation: I deleted them
 //Since these are already encapsulated and inherited in the abstracted animal class
 
-    
 }
+
 
 class arthropods extends Animal{ //arthropods inherits from the base class while applying polymorphism in movement
 
@@ -27,107 +31,166 @@ class arthropods extends Animal{ //arthropods inherits from the base class while
     modifying the animal class properties using abstraction and polymorphism
     */
 
-    _animClass = 'I am class Arthropods'
-    _bodyTemp = 'I am Cold blooded'
-    _backBone = 'I do not have any backbone'
+    _animClass = 'I am from class Arthropod'
+    _bodyTemp = 'we are are Cold blooded'
+    _backBone = 'we do not have any backbone'
 
-    //applying polymorphism to depict unique movement of arthropods
-    constructor(locomotion){
+    //applying polymorphism to depict unique movement and skin covering of arthropods
+    constructor(locomotion, skin){
         super()
-        this.locomotion = 'We may move by flying, crawling, or web!'
+        this.locomotion = 'we may move by flying, crawling, or web!'
+        this.skin = 'We do not have hair or skin covering properties'
     }
 
     movement(){
         const movement = this.locomotion
         return movement
     }
+
+    skinCovering(){
+        const skinCovering = this.skin
+        return skinCovering
+    }
+}
+
+class Fish extends Animal{ //fish inherits from the base class while applying polymorphism in movement
+
+    _animClass = 'I am from class Fish'
+    _bodyTemp = 'we are cold blooded animal'
+    _backBone = 'we have backbone'
+    fin = 'we use it to direct our movement'
+
+    //applying polymorphism to depict unique movement of fishes
+    constructor(locomotion, skin){
+        super()
+        this.locomotion = 'we move by swimming'
+        this.skin = 'scales cover our skin'
+    }
+
+    movement(){
+        const movement = this.locomotion
+        return movement
+    }
+
+    skinCovering(){
+        const skinCovering = this.skin
+        return skinCovering
+    }
+} 
+
+class Amphibian extends Animal{ //fish inherits from the base class while applying polymorphism in movement
+
+    _animClass = 'I am from class Amphibian'
+    _bodyTemp = 'we are cold blooded animals'
+    _backBone = 'we have backbone'
+    habitat = 'we live in water and move on land'
+
+    //applying polymorphism to depict unique movement of amphibians
+    constructor(locomotion, skin){
+        super()
+        this.locomotion = 'we move by hopping'
+        this.skin = 'our skins have pore with no covering; sometimes poisonous'
+    }
+
+    movement(){
+        const movement = this.locomotion
+        return movement
+    }
+
+    skinCovering(){
+        const skinCovering = this.skin
+        return skinCovering
+    }
+} 
+
+class Reptiles extends Animal{ //reptiles inherits from the base class while applying polymorphism in movement
+
+    _animClass = 'I am from class Reptile'
+    _bodyTemp = 'we are cold blooded animal'
+    _backBone = 'we have backbone'
+    
+    //applying polymorphism to depict unique movement of reptiles
+    constructor(locomotion, skin){
+        super()
+        this.locomotion = 'we move by crawling'
+        this.skin = 'some have no skin; some are sharp scales'
+    }
+
+    movement(){
+        const movement = this.locomotion
+        return movement
+    }
+
+    skinCovering(){
+        const skinCovering = this.skin
+        return skinCovering
+    }
+} 
+
+class Aves extends Animal{ //Aves inherits from the base class while applying polymorphism in movement
+
+    _animClass = 'I am from class Aves'
+    _bodyTemp = 'we are warm blooded animal'
+    _backBone = 'we have backbone'
+    wings = 'we use it to direct our movement'
+    beak = 'we use the beak to pick food grains'
+
+    //applying polymorphism to depict unique movement of arthropods
+    constructor(locomotion, skin){
+        super()
+        this.locomotion = 'we move by swimming'
+        this.skin = 'we have feathers that covers our skin'
+    }
+
+    movement(){
+        const movement = this.locomotion
+        return movement
+    }
+
+    skinCovering(){
+        const skinCovering = this.skin
+        return skinCovering
+    }
+} 
+
+class Mammals extends Animal{//abstracting animal base class for inheritance by Mammals
+    _animClass = 'Mammals'
+    _backBone = 'we have backbone'
+    _bodyTemp = 'we are warm blooded animals'
+    childCare = 'we have breasts for to feed our children'
+
+    //applying polymorphism for to depict the unique movement and skin type of Mammals
+    constructor(locomotion, skin){
+        super()
+        this.locomotion = 'we move by walking'
+        this.skin = 'we have hairs and furs that covers our skin'
+    }
+
+    movement(){
+        const movement = this.locomotion
+        return movement
+    }
+
+    skinCovering(){
+        const skinCovering = this.skin
+        return skinCovering
+    }
 }
 
 
-// class fish extends Animal{ //class amphibians with animal inheritance and peculiar characteristics
 
-//     constructor(){
-//          super()
-//         this.habitat()
-//         this.motion()
-//         this.vertebrates()
-//         this.coldBlood()
-//     }
-
-//     habitat(){
-//         console.log('Fishes ives in water')
-//     }
-
-//     motion(){
-//         console.log('Fishes swims in water')
-//     }
-// }
-
-// class amphibians extends Animal{ //class amphibians with animal inheritance and peculiar characteristics
-
-//     constructor(){
-//          super()
-//         this.habitat()
-//         this.invertebrates()
-//         this.coldBlood()
-//     }
-
-//     habitat(){
-//         console.log('Amphibians walk on land and live in water')
-//     }
-// }
-
-// class reptiles extends Animal{ //class amphibians with animal inheritance and peculiar characteristics
-
-//     constructor(){
-//          super()
-//         this.habitat()
-//         this.motion()
-//         this.vertebrates()
-//         this.coldBlood()
-//     }
-
-//     habitat(){
-//         console.log('Reptiles can live both on land and water')
-//     }
-
-//     motion(){
-//         console.log('they move by crawling or while swimming')
-//     }
-// }
-
-// class Aves extends Animal{ //class amphibians with animal inheritance and peculiar characteristics
-
-//     constructor(habitat, motion, beak, feather){
-//          super()
-//         this.habitat()
-//         this.motion()
-//         this.vertebrates()
-//         this.warmBlood()
-//         this.beak()
-//         this.feather()
-//     }
-
-//     habitat(){
-//         console.log('Aves are aboral; they live on trees')
-//     }
-
-//     motion(){
-//         console.log('aves move by flying')
-//     }
-
-//     feather(){
-//         console.log('unique features as wings used for flying')
-//     }
-    
-//     beak(){
-//         console.log('mouth structure for picking food grains')
-//     }
-    
-// }
 const butterfly = new arthropods() 
+const tuna = new Fish()
+const frog = new Amphibian()
+const tortoise = new Reptiles()
+const raven = new Aves()
+const man = new Mammals()
 console.log(butterfly)
-
+console.log(tuna)
+console.log(frog)
+console.log(tortoise)
+console.log(raven)
+console.log(man)
 // const frog = new amphibians()
 // const Fish = new fish()
 // const tortoise = new reptiles()
