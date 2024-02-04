@@ -1,4 +1,4 @@
-class Animal{
+class Animal{//base class for the animal kingdom
     constructor(){ //Abstracting base class for inheritance   
         if(this.constructor === Animal){
             throw new Error ('Animal cannot be called')
